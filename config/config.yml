@@ -1,0 +1,47 @@
+# config/config.yml
+development:
+    google:
+        url: http://translate.google.it/translate_tts?ie=UTF-8
+        query: q
+        target_language: tl
+    languages:
+        Italian: it
+        Spanish: es
+        English: en
+        French: fr
+        German: de
+        Russian: ru
+        Chinese: zh-CN
+        Japanese: ja
+        Korean: ko
+
+test:
+    google:
+        url: http://translate.google.it/translate_tts?ie=UTF-8
+        query: q
+        target_language: tl
+    languages:
+        Italian: it
+        Spanish: es
+        English: en
+        French: fr
+        Russian: ru
+        Chinese: zh-CN
+        Japanese: ja
+        Korean: ko
+
+production:
+    google:
+        url: http://translate.google.it/translate_tts?ie=UTF-8
+        query: q
+        target_language: tl
+    languages:
+        Italian: it
+        Spanish: es
+        English: en
+        French: fr
+        Russian: ru
+        Chinese: zh-CN
+        Japanese: ja
+        Korean: ko
+

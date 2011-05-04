@@ -1,0 +1,66 @@
+<%= form_tag({:action => "translate"}, :id => "translate_frm", :name => "translate_frm", :multipart => true) do %>
+
+  <% if @tr_google_error %>
+    <div id="google_error">
+      <span><%= @tr_google_error %></span>
+    </div>
+  <% end%>
+
+  <% if @tr_errors %>
+    <div id="tr_errors">
+      <span>Please correct the following problems:</span>
+      <ul>
+      <% @tr_errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= label_tag("language", "Language:") %>
+    <%= select_tag("language", options_for_select(LANGUAGES), :include_blank => true) %>
+  </div>
+  <div>
+    <%= text_area_tag("text","", :size => "40x5") %>
+  </div>
+  <div>
+    <%= submit_tag("Download") %>
+  </div>
+
+<% end %>
+
+<%= form_tag({:action => "batch_translate"}, :id => "batch_translate_frm", :name => "batch_translate_frm", :multipart => true) do %>
+
+  <% if @batch_google_error %>
+    <div id="google_error">
+      <span><%= @batch_google_error %></span>
+    </div>
+  <% end%>
+
+  <% if @batch_errors %>
+    <div id="batch_errors">
+      <span>Please correct the following problems:</span>
+      <ul>
+      <% @batch_errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= label_tag("language", "Language:") %>
+    <%= select_tag("file_language", options_for_select(LANGUAGES), :include_blank => true) %>
+  </div>
+
+  <div>
+    <%= file_field_tag("file", :accept => "text/plain") %>
+  </div>
+
+  <div>
+    <%= submit_tag("Generate and download") %>
+  </div>
+
+<% end %>
+
