@@ -73,7 +73,7 @@ def translate_request(text, language)
 
     req.add_field("User-Agent", "#{request.user_agent}")
 
-    req.set_form_data({"GOOGLE_QUERY" => text, GOOGLE_TARGET_LANGUAGE => language})
+    req.set_form_data({GOOGLE_QUERY => text, GOOGLE_TARGET_LANGUAGE => language})
     res = Net::HTTP.new(url.host, url.port).start {|http| http.request(req) }
 
     case res
