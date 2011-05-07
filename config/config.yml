@@ -25,6 +25,7 @@ test:
         Spanish: es
         English: en
         French: fr
+        German: de
         Russian: ru
         Chinese: zh-CN
         Japanese: ja
@@ -40,6 +41,7 @@ production:
         Spanish: es
         English: en
         French: fr
+        German: de
         Russian: ru
         Chinese: zh-CN
         Japanese: ja

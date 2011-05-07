@@ -48,7 +48,7 @@ class TranslateController < ApplicationController
       zip = download_zip_translation(@batch)
 
       if !zip.nil? then
-        send_data zip, :type => "application/zip", :disposition => "attachment", :filename => "#{@batch.filename}.zip"
+        send_data zip, :type => "application/zip", :disposition => "attachment", :filename => "#{remove_file_extension(@batch.filename)}.zip"
       else
          @batch_google_error = "Dialogs with Google Services failed."
          render :action => 'index'
@@ -117,7 +117,7 @@ def download_zip_translation(batch)
       end
       if broken then
         nil
-      else
+    else
         zip = File.open(t.path, "rb") {|io| io.read }
       end
 
